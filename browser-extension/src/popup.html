@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Evanovar RAM</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header class="header">
+      <span id="status-dot" class="dot"></span>
+      <div class="header-text">
+        <div class="title">Evanovar RAM</div>
+        <div id="status-text" class="subtitle">Checking the connection...</div>
+      </div>
+    </header>
+
+    <section id="setup-view" class="view hidden">
+      <p class="hint">
+        In Evanovar RAM open <strong>Settings</strong> &rarr; <strong>Developer</strong>,
+        enable <strong>Browser Extension</strong>, then click
+        <strong>Generate Pairing Code</strong>.
+      </p>
+
+      <label class="field" for="code-input">
+        <span>Pairing code</span>
+        <input
+          id="code-input"
+          type="text"
+          placeholder="ABCD-EFGH"
+          autocomplete="off"
+          spellcheck="false"
+        />
+      </label>
+
+      <button id="link-button" class="primary">Link extension</button>
+    </section>
+
+    <section id="main-view" class="view hidden">
+      <div id="page-context" class="context">No Roblox page detected.</div>
+
+      <div id="group-bar" class="group-bar hidden"></div>
+      <div id="account-list" class="account-list"></div>
+
+      <div class="row">
+        <button id="launch-place" class="primary">Launch here</button>
+        <button id="launch-job">Join server</button>
+      </div>
+
+      <button id="launch-selected">Launch selected</button>
+      <div class="row-links">
+        <button id="select-all" class="link">Check all in view</button>
+        <button id="select-none" class="link">Clear selection</button>
+      </div>
+
+      <hr class="divider" />
+
+      <label class="field" for="join-input">
+        <span>Join user</span>
+        <input
+          id="join-input"
+          type="text"
+          placeholder="Username or user ID"
+          autocomplete="off"
+          spellcheck="false"
+        />
+      </label>
+      <button id="join-user">Join friend's game</button>
+
+      <hr class="divider" />
+
+      <button id="save-account">Save logged-in account</button>
+    </section>
+
+    <div id="log" class="log hidden"></div>
+
+    <footer class="footer">
+      <label class="port" for="port-input">
+        <span>Port</span>
+        <input id="port-input" type="number" min="1024" max="65535" value="7963" />
+      </label>
+      <div class="footer-actions">
+        <button id="refresh-button" class="link">Refresh</button>
+        <button id="unlink-button" class="link hidden">Unlink</button>
+      </div>
+    </footer>
+
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

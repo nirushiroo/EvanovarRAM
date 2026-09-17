@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Evanovar RAM Bridge",
+  "version": "1.0.0",
+  "description": "Launch Roblox accounts, join friends and save the logged-in account through Evanovar RAM.",
+  "action": {
+    "default_title": "Evanovar RAM",
+    "default_popup": "src/popup.html"
+  },
+  "permissions": [
+    "storage",
+    "cookies",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "http://localhost/*",
+    "http://127.0.0.1/*",
+    "https://*.roblox.com/*"
+  ]
+}
